@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ===================================
+       RAFIQ EDUCATION THEME SYSTEM
+       Professional Light/Dark Mode Support
+    =================================== */
+    
+    /* LIGHT MODE - Default Theme Colors */
+    --background: 0 0% 100%;                /* Pure white */
+    --foreground: 0 0% 3.9%;               /* Near black text */
+    --card: 0 0% 100%;                     /* White cards */
+    --card-foreground: 0 0% 3.9%;         /* Dark text on cards */
+    --popover: 0 0% 100%;                  /* White popovers */
+    --popover-foreground: 0 0% 3.9%;      /* Dark text in popovers */
+    --primary: 262.1 83.3% 57.8%;         /* Purple primary */
+    --primary-foreground: 210 20% 98%;    /* Light text on primary */
+    --secondary: 210 40% 96%;              /* Light gray secondary */
+    --secondary-foreground: 215.4 16.3% 46.9%; /* Medium gray text */
+    --muted: 210 40% 96%;                  /* Light muted background */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Medium gray muted text */
+    --accent: 210 40% 92%;                 /* Lighter accent */
+    --accent-foreground: 222.2 84% 4.9%;  /* Dark accent text */
+    --destructive: 0 84.2% 60.2%;         /* Red destructive */
+    --destructive-foreground: 210 20% 98%; /* Light text on destructive */
+    --border: 214.3 31.8% 91.4%;          /* Light border */
+    --input: 214.3 31.8% 91.4%;           /* Light input background */
+    --ring: 262.1 83.3% 57.8%;            /* Purple focus ring */
+    --radius: 0.75rem;                    /* Border radius */
+    
+    /* STATUS COLORS - Light Mode */
+    --success-50: 142 76% 96%;            /* Light green background */
+    --success-100: 142 76% 91%;          /* Lighter green */
+    --success-500: 142 71% 45%;          /* Green primary */
+    --success-600: 142 76% 36%;          /* Darker green */
+    --success-700: 142 72% 29%;          /* Dark green text */
+    
+    --warning-50: 48 100% 96%;           /* Light yellow background */
+    --warning-100: 48 96% 89%;           /* Lighter yellow */
+    --warning-500: 48 96% 53%;           /* Yellow primary */
+    --warning-600: 32 95% 44%;           /* Orange-yellow */
+    --warning-700: 25 95% 39%;           /* Dark orange text */
+    
+    --error-50: 0 86% 97%;               /* Light red background */
+    --error-100: 0 93% 94%;              /* Lighter red */
+    --error-500: 0 84% 60%;              /* Red primary */
+    --error-600: 0 72% 51%;              /* Darker red */
+    --error-700: 0 65% 51%;              /* Dark red text */
+    
+    /* GRADIENTS - Light Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%) 0%, hsl(316 73% 52%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 50%) 100%);
+  }
+
+  .dark {
+    /* DARK MODE - Theme Colors */
+    --background: 222.2 84% 4.9%;         /* Dark navy background */
+    --foreground: 210 20% 98%;            /* Light text */
+    --card: 222.2 84% 4.9%;               /* Dark cards */
+    --card-foreground: 210 20% 98%;       /* Light text on cards */
+    --popover: 222.2 84% 4.9%;            /* Dark popovers */
+    --popover-foreground: 210 20% 98%;    /* Light text in popovers */
+    --primary: 262.1 83.3% 57.8%;         /* Purple primary (same) */
+    --primary-foreground: 210 20% 98%;    /* Light text on primary */
+    --secondary: 217.2 32.6% 17.5%;       /* Dark gray secondary */
+    --secondary-foreground: 210 20% 98%;  /* Light secondary text */
+    --muted: 217.2 32.6% 17.5%;           /* Dark muted background */
+    --muted-foreground: 215 20.2% 65.1%;  /* Light muted text */
+    --accent: 217.2 32.6% 17.5%;          /* Dark accent */
+    --accent-foreground: 210 20% 98%;     /* Light accent text */
+    --destructive: 0 62.8% 30.6%;         /* Dark red destructive */
+    --destructive-foreground: 210 20% 98%; /* Light text on destructive */
+    --border: 217.2 32.6% 17.5%;          /* Dark border */
+    --input: 217.2 32.6% 17.5%;           /* Dark input background */
+    --ring: 262.1 83.3% 57.8%;            /* Purple focus ring (same) */
+    
+    /* STATUS COLORS - Dark Mode */
+    --success-50: 142 76% 6%;             /* Very dark green */
+    --success-100: 142 76% 10%;           /* Dark green background */
+    --success-500: 142 71% 45%;           /* Green primary (same) */
+    --success-600: 142 76% 51%;           /* Lighter green for dark mode */
+    --success-700: 142 72% 58%;           /* Light green text */
+    
+    --warning-50: 48 100% 6%;             /* Very dark yellow */
+    --warning-100: 48 96% 12%;            /* Dark yellow background */
+    --warning-500: 48 96% 53%;            /* Yellow primary (same) */
+    --warning-600: 32 95% 59%;            /* Lighter orange-yellow */
+    --warning-700: 25 95% 65%;            /* Light orange text */
+    
+    --error-50: 0 86% 7%;                 /* Very dark red */
+    --error-100: 0 93% 12%;               /* Dark red background */
+    --error-500: 0 84% 60%;               /* Red primary (same) */
+    --error-600: 0 72% 65%;               /* Lighter red */
+    --error-700: 0 65% 70%;               /* Light red text */
+    
+    /* GRADIENTS - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%) 0%, hsl(316 73% 52%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(217.2 32.6% 17.5%) 0%, hsl(217.2 32.6% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 50%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  /* TYPOGRAPHY SYSTEM */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    @apply text-foreground;
+    line-height: 1.2;
+  }
+
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
+  h5 { @apply text-lg; }
+  h6 { @apply text-base; }
+
+  p {
+    @apply text-base leading-relaxed text-muted-foreground;
+    margin-bottom: 1rem;
+  }
+
+  /* LINK STYLES */
+  a {
+    @apply text-primary no-underline transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-primary/80 underline;
+  }
+
+  a:focus {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background rounded-sm;
+  }
+}
+
+/* ===================================
+   RAFIQ COMPONENT SYSTEM
+=================================== */
+
+/* ENHANCED CARD SYSTEM */
+.rafiq-card {
+  @apply bg-card border border-border rounded-xl shadow-sm p-4 transition-all duration-300 relative overflow-hidden;
+}
+
+.rafiq-card:hover {
+  @apply border-primary/30 shadow-lg transform -translate-y-0.5;
+}
+
+.rafiq-card-compact {
+  @apply p-3;
+}
+
+/* BUTTON SYSTEM */
+.rafiq-button {
+  @apply font-semibold rounded-lg px-4 py-3 transition-all duration-200 cursor-pointer min-h-[44px] border-0 no-underline inline-flex items-center justify-center gap-2;
+}
+
+.rafiq-button-primary {
+  @apply bg-primary text-primary-foreground shadow-sm;
+}
+
+.rafiq-button-primary:hover {
+  @apply bg-primary/90 transform -translate-y-0.5 shadow-md;
+}
+
+.rafiq-button-secondary {
+  @apply bg-secondary text-secondary-foreground border border-border;
+}
+
+.rafiq-button-secondary:hover {
+  @apply bg-accent border-primary/30;
+}
+
+/* STATUS PILLS SYSTEM */
+.rafiq-pill {
+  @apply font-semibold text-sm px-3 py-1.5 rounded-full transition-all duration-200 inline-flex items-center gap-1;
+}
+
+.rafiq-pill-active {
+  @apply bg-green-600 text-white;
+}
+
+.rafiq-pill-completed {
+  @apply bg-blue-700 text-white;
+}
+
+.rafiq-pill-improving {
+  @apply bg-green-500/20 text-green-600 border border-green-500/30;
+}
+
+.rafiq-pill-stable {
+  @apply bg-yellow-500/20 text-yellow-600 border border-yellow-500/30;
+}
+
+.rafiq-pill-needs-attention {
+  @apply bg-red-500/20 text-red-600 border border-red-500/30;
+}
+
+.rafiq-pill:hover {
+  @apply transform scale-105;
+}
+
+/* NAVIGATION SYSTEM */
+.rafiq-nav-item {
+  @apply flex items-center gap-3 p-3 rounded-lg transition-all duration-200 no-underline text-muted-foreground relative overflow-hidden;
+}
+
+.rafiq-nav-item::before {
+  content: '';
+  @apply absolute top-0 left-0 w-1 h-full bg-primary transform scale-y-0 transition-transform duration-200;
+}
+
+.rafiq-nav-item:hover::before,
+.rafiq-nav-item.active::before {
+  @apply scale-y-100;
+}
+
+.rafiq-nav-item:hover {
+  @apply bg-primary/10 text-foreground transform translate-x-1;
+}
+
+.rafiq-nav-item.active {
+  @apply bg-primary text-primary-foreground;
+}
+
+/* BACKGROUND SYSTEM */
+.rafiq-background {
+  @apply bg-background min-h-screen relative;
+}
+
+.rafiq-background-card {
+  @apply bg-card;
+}
+
+/* METRIC DISPLAY SYSTEM */
+.rafiq-metric {
+  @apply text-center p-4 rounded-lg bg-card border border-border transition-all duration-200;
+}
+
+.rafiq-metric:hover {
+  @apply border-primary/30 transform -translate-y-1;
+}
+
+.rafiq-metric-value {
+  @apply text-2xl font-bold text-foreground mb-2;
+}
+
+.rafiq-metric-label {
+  @apply text-muted-foreground text-sm font-medium;
+}
+
+.rafiq-metric-delta-positive {
+  @apply text-green-600 font-semibold;
+}
+
+.rafiq-metric-delta-negative {
+  @apply text-red-600 font-semibold;
+}
+
+/* ALERT SYSTEM */
+.rafiq-alert {
+  @apply bg-card border border-primary/30 rounded-xl p-6 relative overflow-hidden;
+}
+
+.rafiq-alert::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-pink-500;
+}
+
+/* PROGRESS SYSTEM */
+.rafiq-progress {
+  @apply w-full h-2 rounded-full bg-muted overflow-hidden relative;
+}
+
+.rafiq-progress-bar {
+  @apply h-full rounded-full transition-all duration-700 relative overflow-hidden;
+}
+
+.rafiq-progress-improving {
+  @apply bg-gradient-to-r from-green-500 to-green-600;
+}
+
+.rafiq-progress-stable {
+  @apply bg-gradient-to-r from-yellow-500 to-yellow-600;
+}
+
+.rafiq-progress-needs-attention {
+  @apply bg-gradient-to-r from-red-500 to-red-600;
+}
+
+/* FILTER SYSTEM */
+.rafiq-filter {
+  @apply flex gap-3 p-2 flex-wrap justify-center;
+}
+
+.rafiq-filter-chip {
+  @apply rounded-full px-4 py-2 font-semibold text-sm transition-all duration-200 inline-flex items-center gap-2 cursor-pointer border border-transparent;
+}
+
+.rafiq-filter-chip-active {
+  @apply bg-primary text-primary-foreground transform scale-105;
+}
+
+.rafiq-filter-chip-inactive {
+  @apply bg-secondary text-secondary-foreground border-border;
+}
+
+.rafiq-filter-chip-inactive:hover {
+  @apply bg-accent text-foreground border-primary/30 transform scale-105;
+}
+
+/* GRID SYSTEM */
+.rafiq-grid {
+  @apply grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.rafiq-grid-compact {
+  @apply gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* TEXT UTILITIES */
+.rafiq-text-heading {
+  @apply text-foreground font-bold;
+}
+
+.rafiq-text-body {
+  @apply text-muted-foreground font-normal;
+}
+
+.rafiq-text-subtle {
+  @apply text-muted-foreground/60 font-normal;
+}
+
+.rafiq-text-accent {
+  @apply bg-gradient-to-r from-primary to-pink-500 bg-clip-text text-transparent font-bold;
+}
+
+/* ANIMATION SYSTEM */
+@keyframes rafiq-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes rafiq-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rafiq-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rafiq-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rafiq-animate-float {
+  animation: rafiq-float 3s ease-in-out infinite;
+}
+
+.rafiq-animate-pulse {
+  animation: rafiq-pulse 2s ease-in-out infinite;
+}
+
+.rafiq-animate-slide-up {
+  animation: rafiq-slide-up 0.5s ease-out;
+}
+
+.rafiq-animate-scale-in {
+  animation: rafiq-scale-in 0.3s ease-out;
+}
+
+/* ACCESSIBILITY */
+.rafiq-focus-ring:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background rounded-sm;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .rafiq-card {
+    @apply p-3 mb-3;
+  }
+  
+  .rafiq-button {
+    @apply w-full min-h-[48px];
+  }
+  
+  .rafiq-grid {
+    @apply grid-cols-1;
+  }
+  
+  h1 { @apply text-2xl; }
+  h2 { @apply text-xl; }
+  h3 { @apply text-lg; }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* HIGH CONTRAST */
+@media (prefers-contrast: high) {
+  :root {
+    --foreground: 0 0% 0%;
+    --background: 0 0% 100%;
+    --border: 0 0% 50%;
+  }
+  
+  .dark {
+    --foreground: 0 0% 100%;
+    --background: 0 0% 0%;
+    --border: 0 0% 50%;
+  }
+}
